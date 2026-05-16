@@ -1,132 +1,163 @@
 export default function FearlessFitLuxuryHomepage() {
-  return (
-    <div className="bg-black text-white min-h-screen font-sans overflow-hidden">
-      {/* NAVBAR */}
-      <nav className="flex items-center justify-between px-8 py-6 border-b border-white/10 backdrop-blur-md sticky top-0 z-50 bg-black/70">
-        <div className="flex items-center gap-3">
-          <img
-            src="/logo.png"
-            alt="Fearless Fit Logo"
-            className="w-12 h-12 object-contain"
-          />
-          <h1 className="text-2xl font-bold tracking-[0.2em] uppercase">
-            Fearless Fit
-          </h1>
-        </div>
+  const products = [
+    {
+      name: 'Midnight Hoodie',
+      price: '$95',
+      image:
+        'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1974&auto=format&fit=crop',
+    },
+    {
+      name: 'Fearless Baggy Denim',
+      price: '$110',
+      image:
+        'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1974&auto=format&fit=crop',
+    },
+    {
+      name: 'Oversized Tee',
+      price: '$60',
+      image:
+        'https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1974&auto=format&fit=crop',
+    },
+  ]
 
-        <div className="hidden md:flex gap-8 text-sm uppercase tracking-widest">
-          <a href="#shop" className="hover:text-gray-400 transition">
-            Shop
-          </a>
-          <a href="#drops" className="hover:text-gray-400 transition">
-            New Drops
-          </a>
-          <a href="#lookbook" className="hover:text-gray-400 transition">
-            Lookbook
-          </a>
-          <a href="#contact" className="hover:text-gray-400 transition">
-            Contact
-          </a>
+  return (
+    <main className="bg-black text-white min-h-screen overflow-x-hidden selection:bg-white selection:text-black">
+      {/* NAVBAR */}
+      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/50 border-b border-white/10">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5">
+          <div className="flex items-center gap-3">
+            <img
+              src="/logo.png"
+              alt="Fearless Fit"
+              className="w-12 h-12 object-contain mix-blend-screen"
+            />
+
+            <div>
+              <h1 className="uppercase tracking-[0.3em] font-black text-lg">
+                Fearless Fit
+              </h1>
+            </div>
+          </div>
+
+          <nav className="hidden md:flex items-center gap-10 uppercase text-xs tracking-[0.3em] text-zinc-300">
+            <a href="#newdrop" className="hover:text-white transition-all">
+              New Drop
+            </a>
+            <a href="#shop" className="hover:text-white transition-all">
+              Shop
+            </a>
+            <a href="#lookbook" className="hover:text-white transition-all">
+              Lookbook
+            </a>
+            <a href="#newsletter" className="hover:text-white transition-all">
+              Updates
+            </a>
+          </nav>
         </div>
-      </nav>
+      </header>
 
       {/* HERO */}
-      <section className="relative h-screen flex items-center justify-center text-center px-6">
-        <div className="absolute inset-0">
+      <section className="relative min-h-screen flex items-center justify-center">
+        <div className="absolute inset-0 overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1974&auto=format&fit=crop"
-            className="w-full h-full object-cover opacity-40"
-            alt="Streetwear model"
+            src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop"
+            alt="Luxury fashion"
+            className="w-full h-full object-cover opacity-40 scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black" />
+
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_40%)]" />
         </div>
 
-        <div className="relative z-10 max-w-5xl">
-          <p className="uppercase tracking-[0.4em] text-gray-300 mb-6 text-sm">
-            Luxury Streetwear
+        <div className="relative z-10 text-center px-6 max-w-6xl pt-32">
+          <p className="uppercase tracking-[0.5em] text-zinc-400 text-xs md:text-sm mb-8">
+            Premium Streetwear Collection
           </p>
 
-          <h1 className="text-6xl md:text-8xl font-black leading-none uppercase mb-6">
+          <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-black uppercase leading-[0.9] tracking-tight">
             Fearless
             <br />
             Fit
-          </h1>
+          </h2>
 
-          <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10">
-            Built for the fearless. Hood rich aesthetic with oversized fits,
-            luxury vibes, and premium streetwear energy.
+          <p className="max-w-2xl mx-auto text-zinc-400 text-lg mt-8 leading-relaxed">
+            Clean luxury streetwear with oversized fits, premium quality, and a
+            powerful modern aesthetic.
           </p>
 
-          <div className="flex gap-4 justify-center flex-wrap">
-            <button className="px-8 py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition uppercase tracking-wider">
-              Shop Now
+          <div className="flex items-center justify-center gap-5 mt-12 flex-wrap">
+            <button className="bg-white text-black px-10 py-4 rounded-full font-black uppercase tracking-wider hover:scale-105 transition-all duration-300">
+              Shop Collection
             </button>
 
-            <button className="px-8 py-4 border border-white/40 rounded-full hover:bg-white hover:text-black transition uppercase tracking-wider">
-              New Drop
+            <button className="border border-white/20 px-10 py-4 rounded-full uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300">
+              View Lookbook
             </button>
           </div>
         </div>
       </section>
 
-      {/* FEATURED */}
-      <section id="shop" className="px-6 md:px-14 py-24">
-        <div className="flex items-center justify-between mb-12">
-          <h2 className="text-4xl md:text-5xl font-black uppercase">
-            Featured Drop
-          </h2>
+      {/* FEATURED BANNER */}
+      <section className="border-y border-white/10 py-5 overflow-hidden whitespace-nowrap bg-zinc-950">
+        <div className="animate-pulse uppercase tracking-[0.4em] text-zinc-400 text-sm text-center">
+          Limited Drop • Premium Quality • Worldwide Shipping • Fearless Fit
+        </div>
+      </section>
 
-          <button className="border border-white/20 px-5 py-2 rounded-full hover:bg-white hover:text-black transition">
+      {/* PRODUCTS */}
+      <section id="shop" className="max-w-7xl mx-auto px-6 md:px-10 py-28">
+        <div className="flex items-end justify-between mb-14">
+          <div>
+            <p className="uppercase text-zinc-500 tracking-[0.4em] text-xs mb-3">
+              New Collection
+            </p>
+
+            <h3 className="text-5xl md:text-6xl font-black uppercase leading-none">
+              Featured
+              <br />
+              Pieces
+            </h3>
+          </div>
+
+          <button className="hidden md:block border border-white/10 px-6 py-3 rounded-full uppercase text-xs tracking-[0.3em] hover:bg-white hover:text-black transition-all">
             View All
           </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              name: 'FF Hoodie',
-              price: '$89',
-              image:
-                'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1974&auto=format&fit=crop',
-            },
-            {
-              name: 'Baggy Pants',
-              price: '$75',
-              image:
-                'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1974&auto=format&fit=crop',
-            },
-            {
-              name: 'Oversized Tee',
-              price: '$55',
-              image:
-                'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1974&auto=format&fit=crop',
-            },
-          ].map((item, index) => (
+          {products.map((item, index) => (
             <div
               key={index}
-              className="group bg-zinc-900 rounded-3xl overflow-hidden border border-white/10 hover:border-white/30 transition"
+              className="group bg-zinc-950 rounded-[2rem] overflow-hidden border border-white/10 hover:border-white/30 transition-all duration-500"
             >
-              <div className="overflow-hidden">
+              <div className="relative overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-[500px] object-cover group-hover:scale-110 transition duration-700"
+                  className="w-full h-[550px] object-cover group-hover:scale-110 duration-700 transition-transform"
                 />
+
+                <div className="absolute top-5 left-5 bg-black/70 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full text-xs uppercase tracking-[0.2em]">
+                  Limited
+                </div>
               </div>
 
-              <div className="p-6">
-                <div className="flex items-center justify-between">
+              <div className="p-7">
+                <div className="flex justify-between items-center mb-5">
                   <div>
-                    <h3 className="text-2xl font-bold uppercase">
+                    <h4 className="font-black uppercase text-2xl leading-none">
                       {item.name}
-                    </h3>
-                    <p className="text-gray-400 mt-1">Limited Drop</p>
+                    </h4>
+
+                    <p className="text-zinc-500 mt-2 uppercase text-xs tracking-[0.3em]">
+                      Fearless Fit
+                    </p>
                   </div>
 
                   <span className="text-xl font-bold">{item.price}</span>
                 </div>
 
-                <button className="mt-6 w-full bg-white text-black py-3 rounded-full font-bold uppercase hover:scale-[1.02] transition">
+                <button className="w-full bg-white text-black py-4 rounded-full font-black uppercase tracking-[0.2em] hover:scale-[1.02] transition-all">
                   Buy Now
                 </button>
               </div>
@@ -136,84 +167,118 @@ export default function FearlessFitLuxuryHomepage() {
       </section>
 
       {/* LOOKBOOK */}
-      <section id="lookbook" className="px-6 md:px-14 py-24 bg-zinc-950">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-black uppercase mb-4">
-            Fearless Lookbook
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Street luxury inspired by hood rich culture and oversized fashion.
-          </p>
-        </div>
+      <section
+        id="lookbook"
+        className="max-w-7xl mx-auto px-6 md:px-10 py-10"
+      >
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <p className="uppercase tracking-[0.4em] text-zinc-500 text-xs mb-4">
+              Lookbook
+            </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <img
-            src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1973&auto=format&fit=crop"
-            className="rounded-3xl h-[700px] object-cover w-full"
-            alt="Lookbook"
-          />
+            <h3 className="text-5xl md:text-7xl font-black uppercase leading-[0.9] mb-8">
+              Real
+              <br />
+              Luxury
+              <br />
+              Energy
+            </h3>
 
-          <img
-            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop"
-            className="rounded-3xl h-[700px] object-cover w-full"
-            alt="Lookbook"
-          />
+            <p className="text-zinc-400 text-lg leading-relaxed max-w-xl">
+              Your brand should feel premium, clean, and cinematic. Large
+              visuals, oversized fits, dark tones, and modern styling create a
+              real luxury streetwear experience.
+            </p>
+          </div>
+
+          <div className="relative">
+            <img
+              src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1973&auto=format&fit=crop"
+              alt="Lookbook"
+              className="rounded-[2rem] w-full h-[700px] object-cover"
+            />
+
+            <div className="absolute bottom-6 left-6 bg-black/70 backdrop-blur-lg border border-white/10 p-5 rounded-2xl">
+              <p className="uppercase tracking-[0.3em] text-xs text-zinc-400 mb-2">
+                Fearless Fit
+              </p>
+
+              <h4 className="text-2xl font-black uppercase">
+                Premium Collection
+              </h4>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* NEWSLETTER */}
+      {/* EMAIL SECTION */}
       <section
-        id="contact"
-        className="px-6 md:px-14 py-28 text-center relative"
+        id="newsletter"
+        className="max-w-6xl mx-auto px-6 md:px-10 py-32"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-zinc-900 via-black to-zinc-900 opacity-70" />
+        <div className="relative rounded-[3rem] border border-white/10 overflow-hidden bg-zinc-950 p-10 md:p-20 text-center">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.1),transparent_50%)]" />
 
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <p className="uppercase tracking-[0.3em] text-gray-400 mb-4 text-sm">
-            Join The Family
-          </p>
+          <div className="relative z-10">
+            <p className="uppercase tracking-[0.5em] text-zinc-500 text-xs mb-5">
+              Stay Updated
+            </p>
 
-          <h2 className="text-5xl md:text-6xl font-black uppercase mb-6">
-            Stay Updated
-          </h2>
+            <h3 className="text-5xl md:text-7xl font-black uppercase leading-none mb-8">
+              Join The
+              <br />
+              Community
+            </h3>
 
-          <p className="text-gray-400 mb-10 text-lg">
-            Enter your email for exclusive drops, updates, and early access.
-          </p>
+            <p className="text-zinc-400 max-w-2xl mx-auto text-lg mb-12 leading-relaxed">
+              Enter your email for early access, new releases, and exclusive
+              Fearless Fit updates.
+            </p>
 
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="bg-zinc-900 border border-white/10 px-6 py-4 rounded-full w-full md:w-[450px] outline-none"
-            />
+            <div className="flex flex-col md:flex-row gap-4 justify-center max-w-2xl mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 bg-black border border-white/10 rounded-full px-7 py-5 outline-none text-white"
+              />
 
-            <button className="bg-white text-black px-8 py-4 rounded-full font-bold uppercase hover:scale-105 transition">
-              Subscribe
-            </button>
+              <button className="bg-white text-black px-10 py-5 rounded-full uppercase font-black tracking-[0.2em] hover:scale-105 transition-all">
+                Subscribe
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/10 py-10 px-6 md:px-14 flex flex-col md:flex-row justify-between gap-6 items-center">
-        <div className="flex items-center gap-3">
-          <img
-            src="/logo.png"
-            alt="Fearless Fit"
-            className="w-10 h-10 object-contain"
-          />
-          <p className="uppercase tracking-[0.2em] text-sm text-gray-400">
-            Fearless Fit © 2026
-          </p>
-        </div>
+      <footer className="border-t border-white/10 py-10 px-6 md:px-10">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-3">
+            <img
+              src="/logo.png"
+              alt="Fearless Fit"
+              className="w-10 h-10 object-contain mix-blend-screen"
+            />
 
-        <div className="flex gap-6 text-sm text-gray-400 uppercase tracking-wider">
-          <a href="#">Instagram</a>
-          <a href="#">TikTok</a>
-          <a href="#">Shop</a>
+            <div>
+              <p className="uppercase tracking-[0.3em] text-sm font-bold">
+                Fearless Fit
+              </p>
+
+              <p className="text-zinc-500 text-sm mt-1">
+                Premium Streetwear Brand
+              </p>
+            </div>
+          </div>
+
+          <div className="flex gap-8 uppercase tracking-[0.3em] text-xs text-zinc-500">
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Contact</a>
+          </div>
         </div>
       </footer>
-    </div>
+    </main>
   )
 }
