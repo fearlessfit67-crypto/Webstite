@@ -6,27 +6,33 @@
     <title>Fearless Fit | Luxury Streetwear</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap">
 </head>
 <body>
 
-    <!-- Sticky Navbar -->
+    <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="logo">
-            <img src="images/logo-transparent.png" alt="Fearless Fit Logo">
-            FEARLESS FIT
-        </div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#collection">Collection</a>
-            <a href="#story">Our Story</a>
-            <a href="#signup">Join Us</a>
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="images/logo-ff-transparent.png" alt="Fearless Fit">
+                FEARLESS FIT
+            </a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#collection">Collection</a>
+                <a href="#story">Our Story</a>
+                <a href="#signup">Join Us</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- HERO SECTION -->
     <section class="hero" id="home">
-        <div class="hero-content">
+        <div class="hero-bg">
+            <img src="images/hero-bg.jpg" alt="Dark City Street">
+            <div class="overlay"></div>
+        </div>
+        <div class="container hero-content">
             <h1>FEARLESS FIT</h1>
             <p>Built Different.</p>
             <div class="hero-buttons">
@@ -34,93 +40,120 @@
                 <a href="#collection" class="btn secondary">VIEW COLLECTION</a>
             </div>
         </div>
-        <div class="hero-bg">
-            <img src="images/hero-background.jpg" alt="Dark city street background">
-        </div>
     </section>
 
-    <!-- Featured Collection -->
+    <!-- FEATURED COLLECTION -->
     <section class="collection" id="collection">
-        <h2>FEATURED COLLECTION</h2>
-        <div class="products-grid">
+        <div class="container">
+            <h2>FEATURED COLLECTION</h2>
+            <div class="products-grid">
 
-            <!-- Product 1 -->
-            <div class="product-card">
-                <img src="images/classic-hoodie-front.png" alt="Classic FF Hoodie">
-                <h3>Classic FF Hoodie</h3>
-                <p class="price">$70.00 AUD</p>
-                <p class="sizes">Sizes: XS / S / M / L / XL</p>
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/hoodie-front-ff.png" alt="Classic FF Hoodie">
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic FF Hoodie</h3>
+                        <p class="price">$70.00 AUD</p>
+                        <p class="sizes">XS / S / M / L / XL</p>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/pants-front-ff.png" alt="Essential FF Cargo Pants">
+                    </div>
+                    <div class="product-info">
+                        <h3>Essential FF Cargo Pants</h3>
+                        <p class="price">$40.00 AUD</p>
+                        <p class="sizes">XS / S / M / L / XL</p>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/hoodie-back-graphic.png" alt="Graphic FF Heavy Hoodie">
+                    </div>
+                    <div class="product-info">
+                        <h3>Graphic FF Heavy Hoodie</h3>
+                        <p class="price">$80.00 AUD</p>
+                        <p class="sizes">XS / S / M / L / XL</p>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/polo-front-ff.png" alt="Signature FF T-Shirt">
+                    </div>
+                    <div class="product-info">
+                        <h3>Signature FF T-Shirt</h3>
+                        <p class="price">$40.00 AUD</p>
+                        <p class="sizes">XS / S / M / L / XL</p>
+                    </div>
+                </div>
+
+                <!-- SPECIAL BUNDLE -->
+                <div class="product-card special">
+                    <div class="product-img">
+                        <img src="images/bundle-combo.png" alt="Classic Hoodie + Cargo Pants">
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic FF Hoodie + Essential FF Cargo Pants</h3>
+                        <p class="price special-price">$100.00 AUD</p>
+                        <p class="sizes">XS / S / M / L / XL</p>
+                    </div>
+                </div>
+
             </div>
-
-            <!-- Product 2 -->
-            <div class="product-card">
-                <img src="images/essential-pants-front.png" alt="Essential FF Cargo Pants">
-                <h3>Essential FF Cargo Pants</h3>
-                <p class="price">$40.00 AUD</p>
-                <p class="sizes">Sizes: XS / S / M / L / XL</p>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card">
-                <img src="images/graphic-hoodie-back.png" alt="Graphic FF Heavy Hoodie">
-                <h3>Graphic FF Heavy Hoodie</h3>
-                <p class="price">$80.00 AUD</p>
-                <p class="sizes">Sizes: XS / S / M / L / XL</p>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card">
-                <img src="images/signature-tshirt-front.png" alt="Signature FF T-Shirt">
-                <h3>Signature FF T-Shirt</h3>
-                <p class="price">$40.00 AUD</p>
-                <p class="sizes">Sizes: XS / S / M / L / XL</p>
-            </div>
-
-            <!-- Special Bundle -->
-            <div class="product-card special">
-                <img src="images/bundle-combo.png" alt="Classic Hoodie + Cargo Pants Bundle">
-                <h3>Classic FF Hoodie + Essential FF Cargo Pants</h3>
-                <p class="price special-price">$100.00 AUD</p>
-                <p class="sizes">Sizes: XS / S / M / L / XL</p>
-            </div>
-
         </div>
     </section>
 
-    <!-- Lifestyle Section -->
+    <!-- LIFESTYLE / GALLERY -->
     <section class="lifestyle">
-        <h2>FEAR OVER NOTHING.</h2>
-        <div class="gallery-grid">
-            <img src="images/model-1.jpg" alt="Streetwear lifestyle shot">
-            <img src="images/model-2.jpg" alt="Oversized fit pose">
-            <img src="images/model-3.jpg" alt="Dark studio look">
-            <img src="images/model-4.jpg" alt="Night city vibe">
+        <div class="container">
+            <h2>FEAR OVER NOTHING.</h2>
+            <div class="gallery-grid">
+                <img src="images/model1.jpg" alt="Streetwear Model">
+                <img src="images/model2.jpg" alt="Streetwear Model">
+                <img src="images/model3.jpg" alt="Streetwear Model">
+                <img src="images/model4.jpg" alt="Streetwear Model">
+            </div>
         </div>
     </section>
 
-    <!-- Brand Story -->
+    <!-- BRAND STORY -->
     <section class="story" id="story">
-        <h2>OUR STORY</h2>
-        <p>Fearless Fit is built for people who move different. Luxury streetwear inspired by confidence, ambition, and fearless energy. Every piece is designed to stand out, made for those who live without limits.</p>
-    </section>
-
-    <!-- Email Signup -->
-    <section class="signup" id="signup">
-        <h2>JOIN THE MOVEMENT</h2>
-        <form class="signup-form">
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit" class="btn primary">SUBSCRIBE</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="social-links">
-            <a href="https://instagram.com/fearlessfit" target="_blank">Instagram</a>
-            <a href="https://tiktok.com/@fearlessfit" target="_blank">TikTok</a>
-            <a href="mailto:contact@fearlessfit.com">Contact</a>
+        <div class="container">
+            <h2>OUR STORY</h2>
+            <p>Fearless Fit is built for people who move different. Luxury streetwear inspired by confidence, ambition, and fearless energy. Every piece is designed to stand out, made for those who live without limits.</p>
         </div>
-        <p>© 2026 Fearless Fit. All rights reserved.</p>
+    </section>
+
+    <!-- EMAIL SIGNUP -->
+    <section class="signup" id="signup">
+        <div class="container">
+            <h2>JOIN THE MOVEMENT</h2>
+            <form class="signup-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn primary">SUBSCRIBE</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="socials">
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+                <a href="mailto:contact@fearlessfit.com">Contact</a>
+            </div>
+            <p>© 2026 Fearless Fit. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
