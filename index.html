@@ -3,108 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fearless Fit | Luxury Streetwear</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Fearless Fit | Premium Streetwear</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
+    <!-- TOP BAR -->
+    <div class="top-bar">
         <div class="container">
+            <p>FREE SHIPPING ON ORDERS OVER $100 AUD • WORLDWIDE DELIVERY</p>
+        </div>
+    </div>
+
+    <!-- NAVBAR — ONLY TOP MEN -->
+    <nav class="navbar">
+        <div class="container nav-wrapper">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fa fa-bars"></i>
+            </button>
+
             <a href="#" class="logo">
-                <img src="images/logo-ff-transparent.png" alt="Fearless Fit">
-                FEARLESS FIT
+                <img src="logo.png" alt="Fearless Fit">
+                <span>FEARLESS FIT</span>
             </a>
+
             <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#collection">Collection</a>
-                <a href="#story">Our Story</a>
-                <a href="#signup">Join Us</a>
+                <a href="#">NEW ARRIVALS</a>
+                <a href="#" class="active">TOP MEN</a>
+                <a href="#">ACCESSORIES</a>
+                <a href="#">OUTLET</a>
+            </div>
+
+            <div class="nav-icons">
+                <button class="icon-btn" id="searchBtn"><i class="fa fa-search"></i></button>
+                <button class="icon-btn" id="wishlistBtn" onclick="toggleWishlist()">
+                    <i class="fa fa-heart-o"></i>
+                    <span class="badge" id="wishlistCount">0</span>
+                </button>
+                <button class="icon-btn" id="cartBtn" onclick="toggleCart()">
+                    <i class="fa fa-shopping-bag"></i>
+                    <span class="badge" id="cartCount">0</span>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
+    <!-- HERO SECTION — TEXT OVER IMAGE NOW ✅ -->
+    <section class="hero">
         <div class="hero-bg">
-            <img src="images/hero-bg.jpg" alt="Dark City Street">
+            <img src="hero-model-bg.jpg" alt="Hero Background">
             <div class="overlay"></div>
         </div>
+        <!-- TEXT & BUTTON NOW INSIDE HERO, ON TOP OF IMAGE -->
         <div class="container hero-content">
             <h1>FEARLESS FIT</h1>
-            <p>Built Different.</p>
-            <div class="hero-buttons">
-                <a href="#collection" class="btn primary">SHOP NOW</a>
-                <a href="#collection" class="btn secondary">VIEW COLLECTION</a>
-            </div>
+            <p>BUILT DIFFERENT • DESIGNED TO DOMINATE</p>
+            <a href="#products" class="hero-btn">SHOP COLLECTION</a>
         </div>
     </section>
 
-    <!-- FEATURED COLLECTION -->
-    <section class="collection" id="collection">
+    <!-- PAGE HEADER -->
+    <section class="page-header" id="products">
         <div class="container">
-            <h2>FEATURED COLLECTION</h2>
+            <h1>TOP MEN COLLECTION</h1>
+            <p>Premium quality, designed for every move. Built different.</p>
+        </div>
+    </section>
+
+    <!-- PRODUCTS GRID -->
+    <section class="products-section">
+        <div class="container">
             <div class="products-grid">
 
-                <!-- Product 1 -->
+                <!-- PRODUCT 1: CLASSIC JUMPER -->
                 <div class="product-card">
-                    <div class="product-img">
-                        <img src="images/hoodie-front-ff.png" alt="Classic FF Hoodie">
+                    <div class="product-image-wrapper">
+                        <div class="product-image front">
+                            <img src="classic-front.jpg" alt="Classic Jumper">
+                        </div>
+                        <div class="product-image back">
+                            <img src="classic-back.jpg" alt="Classic Jumper Back">
+                        </div>
+                        <button class="product-wishlist" onclick="toggleWishlistItem(this, 'Classic Jumper', 'classic-front.jpg', 70)">
+                            <i class="fa fa-heart-o"></i>
+                        </button>
                     </div>
                     <div class="product-info">
-                        <h3>Classic FF Hoodie</h3>
-                        <p class="price">$70.00 AUD</p>
-                        <p class="sizes">XS / S / M / L / XL</p>
+                        <h3 class="product-name">Classic Jumper</h3>
+                        <p class="product-price">$70.00 AUD</p>
+                        <button class="add-to-cart-btn" onclick="openSizePopup('Classic Jumper', 70)">ADD TO BAG</button>
                     </div>
                 </div>
 
-                <!-- Product 2 -->
+                <!-- PRODUCT 2: GRAPHIC JUMPER -->
                 <div class="product-card">
-                    <div class="product-img">
-                        <img src="images/pants-front-ff.png" alt="Essential FF Cargo Pants">
+                    <div class="product-image-wrapper">
+                        <div class="product-image front">
+                            <img src="graphic-front.jpg" alt="Graphic Jumper">
+                        </div>
+                        <div class="product-image back">
+                            <img src="graphic-back.jpg" alt="Graphic Jumper Back">
+                        </div>
+                        <button class="product-wishlist" onclick="toggleWishlistItem(this, 'Graphic Jumper', 'graphic-front.jpg', 80)">
+                            <i class="fa fa-heart-o"></i>
+                        </button>
                     </div>
                     <div class="product-info">
-                        <h3>Essential FF Cargo Pants</h3>
-                        <p class="price">$40.00 AUD</p>
-                        <p class="sizes">XS / S / M / L / XL</p>
+                        <h3 class="product-name">Graphic Jumper</h3>
+                        <p class="product-price">$80.00 AUD</p>
+                        <button class="add-to-cart-btn" onclick="openSizePopup('Graphic Jumper', 80)">ADD TO BAG</button>
                     </div>
                 </div>
 
-                <!-- Product 3 -->
+                <!-- PRODUCT 3: BAGGIE PANTS -->
                 <div class="product-card">
-                    <div class="product-img">
-                        <img src="images/hoodie-back-graphic.png" alt="Graphic FF Heavy Hoodie">
+                    <div class="product-image-wrapper">
+                        <div class="product-image front">
+                            <img src="pants-front.jpg" alt="Essential Baggie Pants">
+                        </div>
+                        <div class="product-image back">
+                            <img src="pants-back.jpg" alt="Essential Baggie Pants Back">
+                        </div>
+                        <button class="product-wishlist" onclick="toggleWishlistItem(this, 'Essential Baggie Pants', 'pants-front.jpg', 40)">
+                            <i class="fa fa-heart-o"></i>
+                        </button>
                     </div>
                     <div class="product-info">
-                        <h3>Graphic FF Heavy Hoodie</h3>
-                        <p class="price">$80.00 AUD</p>
-                        <p class="sizes">XS / S / M / L / XL</p>
+                        <h3 class="product-name">Essential Baggie Pants</h3>
+                        <p class="product-price">$40.00 AUD</p>
+                        <button class="add-to-cart-btn" onclick="openSizePopup('Essential Baggie Pants', 40)">ADD TO BAG</button>
                     </div>
                 </div>
 
-                <!-- Product 4 -->
+                <!-- PRODUCT 4: T-SHIRT -->
                 <div class="product-card">
-                    <div class="product-img">
-                        <img src="images/polo-front-ff.png" alt="Signature FF T-Shirt">
+                    <div class="product-image-wrapper">
+                        <div class="product-image front">
+                            <img src="tshirt-front.jpg" alt="Essential T-Shirt">
+                        </div>
+                        <div class="product-image back">
+                            <img src="tshirt-back.jpg" alt="Essential T-Shirt Back">
+                        </div>
+                        <button class="product-wishlist" onclick="toggleWishlistItem(this, 'Essential T‑Shirt', 'tshirt-front.jpg', 35)">
+                            <i class="fa fa-heart-o"></i>
+                        </button>
                     </div>
                     <div class="product-info">
-                        <h3>Signature FF T-Shirt</h3>
-                        <p class="price">$40.00 AUD</p>
-                        <p class="sizes">XS / S / M / L / XL</p>
+                        <h3 class="product-name">Essential T‑Shirt</h3>
+                        <p class="product-price">$35.00 AUD</p>
+                        <button class="add-to-cart-btn" onclick="openSizePopup('Essential T‑Shirt', 35)">ADD TO BAG</button>
                     </div>
                 </div>
 
-                <!-- SPECIAL BUNDLE -->
-                <div class="product-card special">
-                    <div class="product-img">
-                        <img src="images/bundle-combo.png" alt="Classic Hoodie + Cargo Pants">
+                <!-- PRODUCT 5: BUNDLE — NO HOVER -->
+                <div class="product-card bundle-card">
+                    <span class="bundle-badge">BUNDLE • SAVE $10</span>
+                    <div class="product-image-wrapper">
+                        <div class="product-image front only-one">
+                            <img src="bundle.jpg" alt="Core Set Bundle">
+                        </div>
+                        <button class="product-wishlist" onclick="toggleWishlistItem(this, 'Core Set Bundle', 'bundle.jpg', 100)">
+                            <i class="fa fa-heart-o"></i>
+                        </button>
                     </div>
                     <div class="product-info">
-                        <h3>Classic FF Hoodie + Essential FF Cargo Pants</h3>
-                        <p class="price special-price">$100.00 AUD</p>
-                        <p class="sizes">XS / S / M / L / XL</p>
+                        <h3 class="product-name">Core Set • Jumper + Pants</h3>
+                        <p class="product-price">$100.00 AUD</p>
+                        <button class="add-to-cart-btn" onclick="openSizePopup('Core Set Bundle', 100)">ADD TO BAG</button>
                     </div>
                 </div>
 
@@ -112,50 +181,205 @@
         </div>
     </section>
 
-    <!-- LIFESTYLE / GALLERY -->
-    <section class="lifestyle">
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
         <div class="container">
-            <h2>FEAR OVER NOTHING.</h2>
-            <div class="gallery-grid">
-                <img src="images/model1.jpg" alt="Streetwear Model">
-                <img src="images/model2.jpg" alt="Streetwear Model">
-                <img src="images/model3.jpg" alt="Streetwear Model">
-                <img src="images/model4.jpg" alt="Streetwear Model">
-            </div>
-        </div>
-    </section>
-
-    <!-- BRAND STORY -->
-    <section class="story" id="story">
-        <div class="container">
-            <h2>OUR STORY</h2>
-            <p>Fearless Fit is built for people who move different. Luxury streetwear inspired by confidence, ambition, and fearless energy. Every piece is designed to stand out, made for those who live without limits.</p>
-        </div>
-    </section>
-
-    <!-- EMAIL SIGNUP -->
-    <section class="signup" id="signup">
-        <div class="container">
-            <h2>JOIN THE MOVEMENT</h2>
-            <form class="signup-form">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit" class="btn primary">SUBSCRIBE</button>
+            <h2>JOIN THE FEARLESS FAMILY</h2>
+            <p>Be the first to shop new drops, access exclusive offers & get behind-the-scenes updates.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">SUBSCRIBE</button>
             </form>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="container">
-            <div class="socials">
-                <a href="#">Instagram</a>
-                <a href="#">TikTok</a>
-                <a href="mailto:contact@fearlessfit.com">Contact</a>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>SHOP</h4>
+                <a href="#">New Arrivals</a>
+                <a href="#">Top Men</a>
+                <a href="#">Accessories</a>
+                <a href="#">Outlet</a>
             </div>
-            <p>© 2026 Fearless Fit. All rights reserved.</p>
+            <div class="footer-col">
+                <h4>HELP</h4>
+                <a href="#">Size Guide</a>
+                <a href="#">Shipping</a>
+                <a href="#">Returns</a>
+                <a href="#">FAQ</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>ABOUT</h4>
+                <a href="#">Our Story</a>
+                <a href="#">Ambassadors</a>
+                <a href="#">Store Locator</a>
+            </div>
+            <div class="footer-col">
+                <h4>CONTACT</h4>
+                <p>Email: fearlessfit67@gmail.com</p>
+                <div class="socials">
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>© 2026 FEARLESS FIT • ALL RIGHTS RESERVED</p>
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <!-- SIZE & QUANTITY POPUP -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <button class="popup-close" onclick="closeSizePopup()">&times;</button>
+            <h3 id="popupProductName"></h3>
+            <p class="popup-price" id="popupProductPrice"></p>
+            
+            <div class="form-group">
+                <label>SELECT SIZE</label>
+                <select id="productSize">
+                    <option>XS</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>QUANTITY</label>
+                <input type="number" id="productQty" min="1" value="1">
+            </div>
+
+            <button class="popup-add-btn" onclick="confirmAddToCart()">ADD TO BAG</button>
+        </div>
+    </div>
+
+    <!-- CART SIDEBAR -->
+    <div class="sidebar" id="cartSidebar">
+        <div class="sidebar-header">
+            <h3>YOUR BAG</h3>
+            <button class="sidebar-close" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="sidebar-items" id="cartItemsList"></div>
+        <div class="sidebar-total">
+            <p>SUBTOTAL: <span id="cartSubtotal">$0.00 AUD</span></p>
+            <button class="checkout-btn">CHECKOUT</button>
+        </div>
+    </div>
+
+    <!-- WISHLIST SIDEBAR -->
+    <div class="sidebar" id="wishlistSidebar">
+        <div class="sidebar-header">
+            <h3>WISHLIST</h3>
+            <button class="sidebar-close" onclick="toggleWishlist()">&times;</button>
+        </div>
+        <div class="sidebar-items" id="wishlistItemsList"></div>
+    </div>
+
+    <!-- OVERLAY -->
+    <div class="body-overlay" id="bodyOverlay" onclick="closeAllSidebars()"></div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        let cart = [];
+        let wishlist = [];
+        let activeProduct = {};
+
+        // Open Size Popup
+        function openSizePopup(name, price) {
+            activeProduct = { name, price };
+            document.getElementById('popupProductName').textContent = name;
+            document.getElementById('popupProductPrice').textContent = `$${price}.00 AUD`;
+            document.getElementById('popupOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSizePopup() {
+            document.getElementById('popupOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Add to Cart
+        function confirmAddToCart() {
+            const size = document.getElementById('productSize').value;
+            const qty = parseInt(document.getElementById('productQty').value);
+            cart.push({ ...activeProduct, size, qty });
+            updateCartDisplay();
+            closeSizePopup();
+            alert('✅ Added to your bag!');
+        }
+
+        function updateCartDisplay() {
+            const list = document.getElementById('cartItemsList');
+            const totalEl = document.getElementById('cartSubtotal');
+            let total = 0;
+            list.innerHTML = '';
+
+            cart.forEach((item, idx) => {
+                total += item.price * item.qty;
+                list.innerHTML += `
+                    <div class="sidebar-item">
+                        <div>
+                            <h4>${item.name}</h4>
+                            <p>Size: ${item.size} | Qty: ${item.qty}</p>
+                            <p>$${(item.price * item.qty).toFixed(2)} AUD</p>
+                        </div>
+                        <button onclick="removeCartItem(${idx})">&times;</button>
+                    </div>
+                `;
+            });
+
+            totalEl.textContent = `$${total.toFixed(2)} AUD`;
+            document.getElementById('cartCount').textContent = cart.length;
+        }
+
+        function removeCartItem(idx) {
+            cart.splice(idx, 1);
+            updateCartDisplay();
+        }
+
+        // Wishlist / Faves
+        function toggleWishlistItem(btn, name, img, price) {
+            const icon = btn.querySelector('i');
+            const exists = wishlist.find(i => i.name === name);
+
+            if (!exists) {
+                wishlist.push({ name, img, price });
+                icon.classList.remove('fa-heart-o');
+                icon.classList.add('fa-heart');
+                icon.style.color = '#cc0000';
+            } else {
+                wishlist = wishlist.filter(i => i.name !== name);
+                icon.classList.remove('fa-heart');
+                icon.classList.add('fa-heart-o');
+                icon.style.color = '';
+            }
+            updateWishlistDisplay();
+        }
+
+        function updateWishlistDisplay() {
+            const list = document.getElementById('wishlistItemsList');
+            list.innerHTML = '';
+            wishlist.forEach(item => {
+                list.innerHTML += `
+                    <div class="sidebar-item">
+                        <img src="${item.img}" width="60">
+                        <div>
+                            <h4>${item.name}</h4>
+                            <p>$${item.price}.00 AUD</p>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('wishlistCount').textContent = wishlist.length;
+        }
+
+        // Sidebar Toggle
+        function toggleCart() {
+            document.getElementById('cartSidebar').classList.toggle('
